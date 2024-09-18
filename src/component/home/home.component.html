@@ -1,0 +1,94 @@
+<div class="row mt-5">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-success">
+        <h4 style="color: #fff">Todo Table</h4>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(item of todosList;track item;){
+            <tr>
+              <th scope="row">{{ item._id }}</th>
+              <td>{{ item.title }}</td>
+              <td>{{ item.description }}</td>
+              <td style="display: flex; gap: 15px">
+                <button (click)="handleEdit(item)" class="btn btn-primary" >Edit</button>
+                <button (click)="deleteTodos(item._id)" class="btn btn-success">
+                  Delete
+                </button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-success">
+        <h4 style="color: #fff">Todo Form</h4>
+      </div>
+      <div class="card-body">
+        <form #form="ngForm">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Title</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="title"
+              name="title"
+              [(ngModel)]="todosobj.title"
+              #title="ngModel"
+              required
+            />
+            @if(title.touched){
+            <div class="text-danger">
+              @if(title?.errors?.["required"]){
+              <span>Required</span>
+              }
+            </div>
+            }
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Description</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Description"
+              name="description"
+              [(ngModel)]="todosobj.description"
+              #description="ngModel"
+              required
+            />
+            @if(description.touched){
+            <div class="text-danger">
+              @if(description?.errors?.["required"]){
+              <span>Required</span>
+              }
+            </div>
+            }
+          </div>
+          <button [disabled]="!form.valid" (click)="saveTodo()" class="btn btn-success">
+            Save Todo
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

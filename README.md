@@ -1,27 +1,29 @@
-# MyApp
+# feature
+1. implement data binding
+    1.1 interpolation
+    1.2 property binding
+    1.3 two way data binding
+    1.4 event binding
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+2. implement Directive 
+    2.1 structural Directive
+        2.1.1 *ngIf
+        2.1.2 *ngFor
+    2.2 attribute Directive
+        2.2.1 @if()
+        2.2.2 @for()
+        2.2.3 @else()
+        2.2.4 @switch()
 
-## Development server
+3. use Services
+    for make api method sepralty
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+4. use Envrionment
+    ng g environments (for base url of api)
 
-## Code scaffolding
+5. create class and interface
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+6. learn Routing
+    6.1 routerLink
+    6.2 routerLinkActive
+    6.3 Dynamic Routing

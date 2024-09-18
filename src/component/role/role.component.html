@@ -1,0 +1,19 @@
+<div class="center">
+    1.interpolation method<br/>
+    <h1>{{title}} <span class="version">{{version}}</span></h1>
+    2.property Binding<br/>
+    <input type="text" [value]="firstname"/>
+    <br/>
+    3.two way data binding<br/>
+    <input type="text" [(ngModel)]="firstname"/>
+    <h3>{{firstname}}</h3>
+    <button (click)="handleChange()">ChangeValue</button>
+    <h1>{{selectValue}}</h1>
+    <select [(ngModel)]="selectValue">
+        <option value="ind">India</option>
+        <option value="pak">Pakistan</option>
+        <option value="bhu">Bhutan</option>
+    </select>
+    <hr />
+    <input [type]="dynamictype" />
+</div>

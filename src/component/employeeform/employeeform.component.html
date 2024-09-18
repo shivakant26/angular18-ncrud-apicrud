@@ -1,0 +1,50 @@
+<div class="container mt-3">
+  <h1>Employee Forms</h1>
+  <form #myForm="ngForm">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="title"
+        #title="ngModel"
+        required
+        [(ngModel)]="model.title"
+        name="title"
+      />
+      @if(title?.touched){
+      <div class="text-danger">
+        @if(title?.errors?.['required']){
+        <span>Required</span>
+        }
+      </div>
+      }
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Description</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="description"
+        [(ngModel)]="model.description"
+        name="description"
+        #description = "ngModel"
+        required
+      />
+      @if(description?.touched){
+        <div class="text-danger">
+          @if(description?.errors?.['required']){
+          <span>Required</span>
+          }
+          </div>
+        }
+    </div>
+    <div class="form-field">
+      <button (click)="addData()" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

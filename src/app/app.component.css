@@ -1,0 +1,18 @@
+.header{
+    background-color: blueviolet;
+    color: #fff;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+ul li{
+    display: inline-block;
+    padding: 20px 15px;
+}
+ul li a{
+    text-decoration: none;
+    color: #fff;
+}
